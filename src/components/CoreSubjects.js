@@ -4,7 +4,7 @@ import React from "react";
 export default function CoreSubjects(props) {
   const columnsFromBackend = {
     core: {
-      name: "All Subjects",
+      name: "Core Subjects",
       items: props.inputText,
     },
 
