@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css"
+import logo from '../assets/Planet.png'
 import {
   HeaderSubtitle,
   HeaderText,
@@ -9,9 +10,7 @@ import {
 export default function Header() {
   return (
     <HeaderWrapper>
-      <HeaderText>
-        PLANET  
-      </HeaderText>
+      <img src={logo} width='400'/>
       <HeaderSubtitle>
         A University of Melbourne Course Planner
       </HeaderSubtitle>
