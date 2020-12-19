@@ -25,16 +25,23 @@ export default function CoreSubjects(props) {
       items: [],
     },
   };
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 289eef882288a8f8a9575a835735fc8c97ad0987
   const renderSubjects = () =>{
     return(
       props.inputText.map(( subject )=>{
         return(
           <div className='col-2 subs'>
+<<<<<<< HEAD
             <h2>{ subject[0] }</h2>
             <h3>{ subject[1] }</h3>
+=======
+            <h2>{ subject }</h2>
+>>>>>>> 289eef882288a8f8a9575a835735fc8c97ad0987
           </div>
         )
       })

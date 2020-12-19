@@ -1,4 +1,5 @@
 export const ScienceOptions = [
+<<<<<<< HEAD
   { label: "Agricultural Science", core: [] },
   { label: "Animal Health and Disease", core: [] },
   { label: "Animal Science and Management", core: [] },
@@ -50,6 +51,12 @@ export const ScienceOptions = [
   { label: "Veterinary BioSciences", core: [] },
   { label: "Zoology", core: [] },
 ];
+=======
+    { value: 'datascience', label: 'Data Science',core: ['COMP10001', ' COMP10002']},
+    { value: 'computing', label: 'Computing',core: ['COMP10003', ' COMP10004']},
+    
+  ];
+>>>>>>> 289eef882288a8f8a9575a835735fc8c97ad0987
 
 export const CommerceOptions = [
   { label: "Economics" },
