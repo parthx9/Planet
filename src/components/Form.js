@@ -1,6 +1,7 @@
 import React from "react";
 import { ScienceOptions, groupedOptions } from "./data";
 import Select from 'react-select';
+import  {FormWrapper} from "./styles/Formstyles"
 
 const formatGroupLabel = (data) => (
   <div className='groupStyles'>
@@ -15,12 +16,15 @@ export default function Form(props) {
   };
   return (
     <div>
-        <Select
+      <FormWrapper>
+      <Select
           defaultValue={ScienceOptions[1]}
           options={groupedOptions}
           formatGroupLabel={formatGroupLabel}
           onChange={inputMajor}
         />
+      </FormWrapper>
+        
     </div>
   );
 }

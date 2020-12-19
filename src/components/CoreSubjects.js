@@ -25,23 +25,17 @@ export default function CoreSubjects(props) {
       items: [],
     },
   };
-<<<<<<< HEAD
 
 
-
-=======
->>>>>>> 289eef882288a8f8a9575a835735fc8c97ad0987
   const renderSubjects = () =>{
     return(
       props.inputText.map(( subject )=>{
         return(
           <div className='col-2 subs'>
-<<<<<<< HEAD
-            <h2>{ subject[0] }</h2>
-            <h3>{ subject[1] }</h3>
-=======
-            <h2>{ subject }</h2>
->>>>>>> 289eef882288a8f8a9575a835735fc8c97ad0987
+
+            <h4>{ subject[0] }</h4>
+            <h5>{ subject[1] }</h5>
+
           </div>
         )
       })
@@ -51,10 +45,12 @@ export default function CoreSubjects(props) {
   if (props.inputText){
     return(
         <div>
-          <h1>The Core subjects for this major is {columnsFromBackend.core.items}</h1>
+          
           <div className='row sub-row'>
             {renderSubjects()}
           </div>
+          <div><h1>Please fill the prerequisites first.</h1></div>
+          
         </div>
       )  
   }

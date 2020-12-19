@@ -1,11 +1,21 @@
 import React from "react";
+import "../App.css"
+import {
+  HeaderSubtitle,
+  HeaderText,
+  HeaderWrapper
+} from "./styles/Headerstyles"; 
 
 export default function Header() {
   return (
-    <div>
-      <header>
-        <h3>Unimelb Study Planner</h3>
-      </header>
-    </div>
+    <HeaderWrapper>
+      <HeaderText>
+        PLANET  
+      </HeaderText>
+      <HeaderSubtitle>
+        A University of Melbourne Course Planner
+      </HeaderSubtitle>
+      
+    </HeaderWrapper>
   );
 }
