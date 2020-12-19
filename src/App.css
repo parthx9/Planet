@@ -158,15 +158,16 @@ Select{
   color: #000000;
 }
 .subs-row{
-  padding: 20px 0px;
+  padding: 10px 0px;
   text-align: center;
 }
 .subs{
-  padding: 30px;
+  padding: 10px;
   text-align: center;
   border: 1px solid #000000;
   border-radius: 5px;
-  margin: 20px;
+  margin: 10px;
+  background-color: aqua;
 }
 
 .Title{
