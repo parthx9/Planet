@@ -26,15 +26,7 @@ export default function Form(props) {
           onChange={inputMajor}
         />
       </FormWrapper>
-      <FormWrapper>
-        <h4>Select your Electives and Breadths</h4>
-        <Select
-          defaultValue={FirstOption[0]}
-          options={groupedOptions}
-          formatGroupLabel={formatGroupLabel}
-          onChange={inputMajor}
-        />
-      </FormWrapper>
+      
         
     </div>
   );
