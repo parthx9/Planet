@@ -4,45 +4,21 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 
 export default function CoreSubjects(props) {
-  const columnsFromBackend = {
-    core: {
-      name: "Core Subjects",
-      items: props.inputText,
-    },
+  const coresFromBackend = [props.inputText]
 
-    1: {
-      name: "Subject 1",
-      items: [],
-    },
-    2: {
-      name: "Subject 2",
-      items: [],
-    },
-    3: {
-      name: "Subject 3",
-      items: [],
-    },
-    4: {
-      name: "Subject 4",
-      items: [],
-    },
-  };
-
-  const onDragEnd = result => {
-
-  }
-
+ 
+ 
   const renderSubjects = () =>{
     return(
       props.inputText.map(( subject )=>{
-        //console.log(columnsFromBackend.core.items);
+        
         return(
           
           <div className='col-2 subs'>
           
           <h4>{ subject[0] }</h4>
           <h5>{ subject[1] }</h5>
-        
+          
             
           </div>
          
