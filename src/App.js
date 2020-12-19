@@ -1,4 +1,5 @@
 import "./App.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";

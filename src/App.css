@@ -137,3 +137,33 @@ select {
   transform: scale(1.5);
 }
 */
+/* Custom CSS */
+
+.groupBadgeStyles{
+  background-color: "#EBECF0";
+  border-radius: 2rem ;
+  color: #172B4D;
+  display: inline-block;
+  font-size: 12;
+  line-height: 1;
+  text-align: center;
+}
+.groupStyles{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+Select{
+  color: #000000;
+}
+.subs-row{
+  padding: 20px 0px;
+  text-align: center;
+}
+.subs{
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin: 20px;
+}

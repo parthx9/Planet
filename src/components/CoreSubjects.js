@@ -25,11 +25,34 @@ export default function CoreSubjects(props) {
       items: [],
     },
   };
-  
-  return (
-    <div>
-      <h1>The Core subjects for this major is {columnsFromBackend.core.items}</h1>
-    </div>
-  );
+  const renderSubjects = () =>{
+    return(
+      props.inputText.map(( subject )=>{
+        return(
+          <div className='col-2 subs'>
+            <h2>{ subject }</h2>
+          </div>
+        )
+      })
+    )
+  }
+
+  if (props.inputText){
+    return(
+        <div>
+          <h1>The Core subjects for this major is {columnsFromBackend.core.items}</h1>
+          <div className='row sub-row'>
+            {renderSubjects()}
+          </div>
+        </div>
+      )  
+  }
+  else{
+    return(
+      <div>
+
+      </div>
+    )
+  }
 }
 

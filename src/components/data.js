@@ -2,7 +2,6 @@ export const ScienceOptions = [
     { value: 'datascience', label: 'Data Science',core: ['COMP10001', ' COMP10002']},
     { value: 'computing', label: 'Computing',core: ['COMP10003', ' COMP10004']},
     
-    
   ];
 
 export const  CommerceOptions = [
