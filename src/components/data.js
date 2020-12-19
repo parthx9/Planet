@@ -53,6 +53,11 @@ export const ScienceOptions = [
 
 ]; 
 
+export const FirstOption = [
+  { label: "Select" },
+
+];
+
 
 export const CommerceOptions = [
   { label: "Economics" },
@@ -149,7 +154,7 @@ export const groupedOptions = [
   },
 ];
 
-export const optionalSubjectsSem1 = [
+export const optionalSubjects = [
   {
     code: "ABPL10004",
     name: "Global Foundations of Design",

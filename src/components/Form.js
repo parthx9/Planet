@@ -1,5 +1,5 @@
 import React from "react";
-import { ScienceOptions, groupedOptions } from "./data";
+import { FirstOption, groupedOptions } from "./data";
 import Select from 'react-select';
 import  {FormWrapper} from "./styles/Formstyles"
 
@@ -15,10 +15,21 @@ export default function Form(props) {
     props.setInputText(e.core);
   };
   return (
-    <div>
+    <div >
+      
+      <FormWrapper >
+        <h4>Select your Major</h4>
+        <Select
+          defaultValue={FirstOption[0]}
+          options={groupedOptions}
+          formatGroupLabel={formatGroupLabel}
+          onChange={inputMajor}
+        />
+      </FormWrapper>
       <FormWrapper>
-      <Select
-          defaultValue={ScienceOptions[1]}
+        <h4>Select your Electives and Breadths</h4>
+        <Select
+          defaultValue={FirstOption[0]}
           options={groupedOptions}
           formatGroupLabel={formatGroupLabel}
           onChange={inputMajor}

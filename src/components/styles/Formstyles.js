@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FormWrapper = styled.div`
-  max-height: 60px;
+  max-height: 40px;
   min-height: 20px;
   text-align: left;
   background-color: ${props => props.theme.headerBg};
@@ -10,9 +10,9 @@ export const FormWrapper = styled.div`
   /* align-content: center; */
   flex-direction: column;
   color: white;
-  padding: 60px 12px;
+  padding: 50px 12px;
   margin: 0px;
-  margin-right: 900px;
+  margin-right: 850px;
   /* Should always be on top7 */
   z-index: 3;
   position: relative;
