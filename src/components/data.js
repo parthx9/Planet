@@ -50,7 +50,9 @@ export const ScienceOptions = [
   { label: "Spatial Systems", core: [] },
   { label: "Veterinary BioSciences", core: [] },
   { label: "Zoology", core: [] },
+
 ]; 
+
 
 export const CommerceOptions = [
   { label: "Economics" },

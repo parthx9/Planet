@@ -26,15 +26,17 @@ export default function CoreSubjects(props) {
     },
   };
 
-
   const renderSubjects = () =>{
     return(
       props.inputText.map(( subject )=>{
         return(
           <div className='col-2 subs'>
 
+
             <h4>{ subject[0] }</h4>
             <h5>{ subject[1] }</h5>
+
+
 
           </div>
         )
