@@ -1,67 +1,64 @@
 import React from "react";
-import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 
 
+export default function CoreSubjects({ subject }) {
 
-export default function CoreSubjects(props) {
-  const coresFromBackend = [props.inputText]
-
- 
  
   const renderSubjects = () =>{
     return(
-      props.inputText.map(( subject )=>{
-        
+      subject.map((subject, index)=>{
         return(
-          
-          <div className='col-2 subs'>
-          
-          
-          <h5>{ subject }</h5>
-          
-            
-          </div>
-         
+          <Draggable key={index} index={index} draggableId={subject[0]}>
+            {(provided)=>
+              <li {...provided.dragHandleProps} {...provided.draggableProps} ref={provided.innerRef} >
+                <div className='subs'>
+                  <h4>{ subject }</h4>
+                </div>
+              </li>
+            }
+          </Draggable>
         )
       })
     )
   }
 
-  if (props.inputText){
+  if (subject){
     return(
-        <div>
-          
-          <div className='divStyle2'>
-          <p>&nbsp;</p>
-          <h3>Please fill the prerequisites.</h3>
-          <div >
-            <p>&nbsp;</p>
-            <h2> Core Subjects </h2>
-            <div className='row sub-row'>
-            {renderSubjects()}
-            </div>
-            <p>&nbsp;</p>
-            <h2> Year 1 Semester 1 </h2>
-            <p>&nbsp;</p>
-            <h2> Year 1 Semester 2 </h2>
-            <p>&nbsp;</p>
-            <h2> Year 2 Semester 1 </h2>
-            <p>&nbsp;</p>
-            <h2> Year 2 Semester 2 </h2>
-            <p>&nbsp;</p>
-            <h2> Year 3 Semester 1 </h2>
-            <p>&nbsp;</p>
-            <h2> Year 3 Semester 2 </h2>
+        <div className='container'>
+            <div className='grid-area'>
+              <DragDropContext>
+                <div className='core-area'>
+                  <h2>Core Subjects </h2>
+                  <Droppable droppableId='subjects'>
+                    {(provided)=>(
+                      <ul className='subjects' {...provided.droppableProps} ref={provided.innerRef}>
+                        {renderSubjects()}
+                        {provided.placeholder}
+                      </ul>
+                    )}
+                  </Droppable>
+                </div>
+              </DragDropContext>
+              <DragDropContext>
+                <div className='selected-area'>
+                  <h2>Selected Subjects </h2>
+                  <Droppable droppableId='subjects'>
+                    {(provided)=>(
+                      <ul className='subjects' {...provided.droppableProps} ref={provided.innerRef}>
 
-          </div>
-        </div>
+                      </ul>
+                    )}
+                  </Droppable>
+                </div>
+              </DragDropContext>
+            </div>
         </div>
       )  
   }
   else{
     return(
-      <div>
-
+      <div className='null-area'>
       </div>
     )
   }

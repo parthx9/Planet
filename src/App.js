@@ -4,23 +4,19 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import CoreSubjects from "./components/CoreSubjects";
-
 import smoothscroll from "smoothscroll-polyfill";
 
 smoothscroll.polyfill();
 
 function App() {
-  const [inputText, setInputText] = useState("");
+  const [subject, setSubject] = useState(null);
   
   return (
-   
-      <div className="App">
+    <div className="App">
       <Header />
-      <Form setInputText={setInputText} />
-      <CoreSubjects inputText = {inputText}/>
+      <Form setSubject={setSubject} />
+      <CoreSubjects subject = {subject}/>
     </div>
-    
-    
   );
 }
 
