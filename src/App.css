@@ -62,3 +62,6 @@ Select{
   padding: 15px 30px;
   height: 300px;
 }
+.subjects{
+  list-style: none;
+}

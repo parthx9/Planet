@@ -1,26 +1,24 @@
 import React from "react";
-import { Draggable, Droppable } from 'react-drag-and-drop';
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 
 
 export default function CoreSubjects({ subject }) {
 
-  const onDrop=(result)=>{
-    console.log(result)
-  }
 
   const renderSubjects = () =>{
     return(
-      subject.map(( subject )=>{
-        //console.log(columnsFromBackend.core.items);
+      subject.map((subject, index)=>{
         return(
-          <div className='col-2'>
-            <Draggable type='core' data='sub'>
-              <div className='subs'>
-                <h4>{ subject[0] }</h4>
-                <h5>{ subject[1] }</h5>
-              </div>
-            </Draggable>
-          </div>
+          <Draggable key={index} index={index} draggableId={subject[0]}>
+            {(provided)=>
+              <li {...provided.dragHandleProps} {...provided.draggableProps} ref={provided.innerRef} >
+                <div className='subs'>
+                  <h4>{ subject[0] }</h4>
+                  <h5>{ subject[1] }</h5>
+                </div>
+              </li>
+            }
+          </Draggable>
         )
       })
     )
@@ -30,22 +28,31 @@ export default function CoreSubjects({ subject }) {
     return(
         <div className='container'>
             <div className='grid-area'>
-              <div className='core-area'>
-                <h2>Core Subjects </h2>
-                <Droppable>
-                  <div className='row sub-row'>
-                    {renderSubjects()}
-                  </div>
-                </Droppable>
-              </div>
-              <div className='selected-area'>
-                <h2>Selected Subjects </h2>
-                <Droppable types={['core']}>
-                  <ul>
+              <DragDropContext>
+                <div className='core-area'>
+                  <h2>Core Subjects </h2>
+                  <Droppable droppableId='subjects'>
+                    {(provided)=>(
+                      <ul className='subjects' {...provided.droppableProps} ref={provided.innerRef}>
+                        {renderSubjects()}
+                        {provided.placeholder}
+                      </ul>
+                    )}
+                  </Droppable>
+                </div>
+              </DragDropContext>
+              <DragDropContext>
+                <div className='selected-area'>
+                  <h2>Selected Subjects </h2>
+                  <Droppable droppableId='subjects'>
+                    {(provided)=>(
+                      <ul className='subjects' {...provided.droppableProps} ref={provided.innerRef}>
 
-                  </ul>
-                </Droppable>
-              </div>
+                      </ul>
+                    )}
+                  </Droppable>
+                </div>
+              </DragDropContext>
             </div>
         </div>
       )  
