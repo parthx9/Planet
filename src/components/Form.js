@@ -1,5 +1,5 @@
 import React from "react";
-import { FirstOption, groupedOptions } from "./data";
+import { FirstOption, groupedOptions,intakeOptions } from "./data";
 import Select from 'react-select';
 
 const formatGroupLabel = (data) => (
@@ -14,16 +14,28 @@ export default function Form({ setSubject }) {
     setSubject(e.core);
   };
   return (
-    <div className='container'>
+    <div>
       <div className='form-area'>
         <h4>Select your Major</h4>
+          <div className='select-custom'>
           <Select
             defaultValue={FirstOption[0]}
             options={groupedOptions}
             formatGroupLabel={formatGroupLabel}
-            onChange={selectMajor}
-          />  
+            onChange={selectMajor} /> 
+          </div> 
+          <h4>Select Intake</h4>
+          <div className='select-custom'>
+          <Select
+            defaultValue={FirstOption[0]}
+            options={intakeOptions}
+            formatGroupLabel={formatGroupLabel}
+            /> 
+          </div>
       </div>
+      
+     
+      
     </div>
   );
 }

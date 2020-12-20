@@ -1,3 +1,14 @@
+export const intakeOptions = [
+  {
+    label:"Start Year Intake"
+  },
+  {
+    label:"Mid Year Intake"
+  },
+]
+
+
+
 export const ScienceOptions = [
   {
     label: "Agricultural Science",

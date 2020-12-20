@@ -1,66 +1,44 @@
 import React from "react";
-import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
+import Scroll from "react-scroll";
 
+var Element = Scroll.Element;
 
 export default function CoreSubjects({ subject }) {
+  const renderSubjects = () => {
+    return subject.map((subject) => {
+      return (
+        <li>
+          <div className="col-2 subs">
+            <h6>{subject}</h6>
+          </div>
+        </li>
+      );
+    });
+  };
 
- 
-  const renderSubjects = () =>{
-    return(
-      subject.map((subject, index)=>{
-        return(
-          <Draggable key={index} index={index} draggableId={subject[0]}>
-            {(provided)=>
-              <li {...provided.dragHandleProps} {...provided.draggableProps} ref={provided.innerRef} >
-                <div className='subs'>
-                  <h4>{ subject }</h4>
-                </div>
-              </li>
-            }
-          </Draggable>
-        )
-      })
-    )
-  }
-
-  if (subject){
-    return(
-        <div className='container'>
-            <div className='grid-area'>
-              <DragDropContext>
-                <div className='core-area'>
-                  <h2>Core Subjects </h2>
-                  <Droppable droppableId='subjects'>
-                    {(provided)=>(
-                      <ul className='subjects' {...provided.droppableProps} ref={provided.innerRef}>
-                        {renderSubjects()}
-                        {provided.placeholder}
-                      </ul>
-                    )}
-                  </Droppable>
-                </div>
-              </DragDropContext>
-              <DragDropContext>
-                <div className='selected-area'>
-                  <h2>Selected Subjects </h2>
-                  <Droppable droppableId='subjects'>
-                    {(provided)=>(
-                      <ul className='subjects' {...provided.droppableProps} ref={provided.innerRef}>
-
-                      </ul>
-                    )}
-                  </Droppable>
-                </div>
-              </DragDropContext>
-            </div>
+  if (subject) {
+    return (
+      <div>
+        <div>
+          <div >
+            <h2>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Core Subjects </h2>
+            <ul className="subjects">
+              <Element
+                style={{
+                  position: "relative",
+                  height: "400px",
+                  overflow: "scroll",
+                  marginBottom: "50px",
+                }}
+              >
+                {renderSubjects()}
+              </Element>
+            </ul>
+          </div>
         </div>
-      )  
-  }
-  else{
-    return(
-      <div className='null-area'>
       </div>
-    )
+    );
+  } else {
+    return <div className="null-area"></div>;
   }
 }
-
