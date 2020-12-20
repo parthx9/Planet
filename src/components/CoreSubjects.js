@@ -16,8 +16,8 @@ export default function CoreSubjects(props) {
           
           <div className='col-2 subs'>
           
-          <h4>{ subject[0] }</h4>
-          <h5>{ subject[1] }</h5>
+          
+          <h5>{ subject }</h5>
           
             
           </div>
