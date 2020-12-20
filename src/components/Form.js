@@ -1,7 +1,6 @@
 import React from "react";
 import { FirstOption, groupedOptions } from "./data";
 import Select from 'react-select';
-import  {FormWrapper} from "./styles/Formstyles"
 
 const formatGroupLabel = (data) => (
   <div className='groupStyles'>
@@ -10,24 +9,21 @@ const formatGroupLabel = (data) => (
   </div>
 );
 
-export default function Form(props) {
-  const inputMajor = (e) => {
-    props.setInputText(e.core);
+export default function Form({ setSubject }) {
+  const selectMajor = (e) => {
+    setSubject(e.core);
   };
   return (
-    <div >
-      
-      <FormWrapper >
+    <div className='container'>
+      <div className='form-area'>
         <h4>Select your Major</h4>
-        <Select
-          defaultValue={FirstOption[0]}
-          options={groupedOptions}
-          formatGroupLabel={formatGroupLabel}
-          onChange={inputMajor}
-        />
-      </FormWrapper>
-      
-        
+          <Select
+            defaultValue={FirstOption[0]}
+            options={groupedOptions}
+            formatGroupLabel={formatGroupLabel}
+            onChange={selectMajor}
+          />  
+      </div>
     </div>
   );
 }

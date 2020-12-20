@@ -1,91 +1,58 @@
 import React from "react";
-import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import { Draggable, Droppable } from 'react-drag-and-drop';
 
 
+export default function CoreSubjects({ subject }) {
 
-export default function CoreSubjects(props) {
-  const columnsFromBackend = {
-    core: {
-      name: "Core Subjects",
-      items: props.inputText,
-    },
-
-    1: {
-      name: "Subject 1",
-      items: [],
-    },
-    2: {
-      name: "Subject 2",
-      items: [],
-    },
-    3: {
-      name: "Subject 3",
-      items: [],
-    },
-    4: {
-      name: "Subject 4",
-      items: [],
-    },
-  };
-
-  const onDragEnd = result => {
-
+  const onDrop=(result)=>{
+    console.log(result)
   }
 
   const renderSubjects = () =>{
     return(
-      props.inputText.map(( subject )=>{
+      subject.map(( subject )=>{
         //console.log(columnsFromBackend.core.items);
         return(
-          
-          <div className='col-2 subs'>
-          
-          <h4>{ subject[0] }</h4>
-          <h5>{ subject[1] }</h5>
-        
-            
+          <div className='col-2'>
+            <Draggable type='core' data='sub'>
+              <div className='subs'>
+                <h4>{ subject[0] }</h4>
+                <h5>{ subject[1] }</h5>
+              </div>
+            </Draggable>
           </div>
-         
         )
       })
     )
   }
 
-  if (props.inputText){
+  if (subject){
     return(
-        <div>
-          
-          <div className='divStyle2'>
-          <p>&nbsp;</p>
-          <h3>Please fill the prerequisites.</h3>
-          <div >
-            <p>&nbsp;</p>
-            <h2> Core Subjects </h2>
-            <div className='row sub-row'>
-            {renderSubjects()}
-            </div>
-            <p>&nbsp;</p>
-            <h2> Year 1 Semester 1 </h2>
-            <p>&nbsp;</p>
-            <h2> Year 1 Semester 2 </h2>
-            <p>&nbsp;</p>
-            <h2> Year 2 Semester 1 </h2>
-            <p>&nbsp;</p>
-            <h2> Year 2 Semester 2 </h2>
-            <p>&nbsp;</p>
-            <h2> Year 3 Semester 1 </h2>
-            <p>&nbsp;</p>
-            <h2> Year 3 Semester 2 </h2>
+        <div className='container'>
+            <div className='grid-area'>
+              <div className='core-area'>
+                <h2>Core Subjects </h2>
+                <Droppable>
+                  <div className='row sub-row'>
+                    {renderSubjects()}
+                  </div>
+                </Droppable>
+              </div>
+              <div className='selected-area'>
+                <h2>Selected Subjects </h2>
+                <Droppable types={['core']}>
+                  <ul>
 
-          </div>
-        </div>
+                  </ul>
+                </Droppable>
+              </div>
+            </div>
         </div>
       )  
   }
   else{
     return(
-      <div>
-
+      <div className='null-area'>
       </div>
     )
   }
