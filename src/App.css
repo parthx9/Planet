@@ -1,23 +1,46 @@
 /* Custom CSS */
-body{
-  background: #F2994A;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-} 
-/* .groupBadgeStyles{
-  background-color: #EBECF0;
-  border-radius: 2rem ;
-  color: #172B4D;
-  display: inline-block;
-  font-size: 12;
-  line-height: 1;
-  text-align: center;
+.App{
+  width:100vw;
+  height: 100vh;
+  position: relative;
 }
-.groupStyles{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
+
+body{
+  background: #EAE8FF;  /* fallback for old browsers */
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0;
+} 
+
+
+.header{
+  width: 100%;
+  background-color: #2d3142;
+  border-radius: 0px 0px 0px 0px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.header .logo{
+  padding: 10px 10px;
+}
+
+.form-area{
+  padding: 50px;
+}
+
+.Sidebar{
+  height: 100%;
+  background-color: #ADACB5;
+  width: 350px;
+}
+
+.Maingrid{
+  height: 100%;
+  width:800px;
+  background-color: #d8d5db;
+  position: absolute;
+  top:86px;
+  right:300px;
+}
+
 Select{
   color: #000000;
 }
@@ -26,38 +49,31 @@ Select{
   text-align: center;
 }
 .subs{
-  padding: 10px;
+  
   text-align: center;
   border: 1px solid #000000;
   border-radius: 5px;
   margin: 10px;
-  background-color: aqua;
-}
-.header{
-  width: 100%;
-  background-color: #F2994A;
-  border-radius: 0px 0px 10px 10px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-}
-.header .logo{
-  padding: 20px 50px;
+  background-color: #2d3142;
+  font-size: 25px;
+  font-family:  Helvetica;
+  color: #fff;
 }
 .form-area{
   padding: 50px;
 }
 .form-area h4{
   font-weight: 700;
-  font-size: 28px;
-  margin-right: 450px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #fff;  
 }
-.core-area{
-  border-radius: 10px;
-  border: rgba(0, 0, 0, 0.3) solid 2px;
-  background-color: #fff;
-  padding: 15px 10px;
-  margin: 20px;
+.core-area h2{
+  font-weight: 700;
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #fff;
+  margin-left: 50px;
 }
 .selected-area{
   border-radius: 10px;
@@ -71,5 +87,5 @@ Select{
 }
 
 .select-custom{
-  margin-right: 1050px;
+  margin-right: 10px;
 }

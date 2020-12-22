@@ -1,11 +1,11 @@
 import React from "react";
 import { FirstOption, groupedOptions,intakeOptions } from "./data";
 import Select from 'react-select';
+import "../App"
 
 const formatGroupLabel = (data) => (
   <div className='groupStyles'>
     <span>{data.label}</span>
-    <span className='groupBadgeStyles'>{data.options.length}</span>
   </div>
 );
 

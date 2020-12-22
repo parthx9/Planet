@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.css"
 import Scroll from "react-scroll";
 
 var Element = Scroll.Element;
@@ -20,15 +21,17 @@ export default function CoreSubjects({ subject }) {
     return (
       <div>
         <div>
-          <div >
-            <h2>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Core Subjects </h2>
+          <div className="core-area">
+            <h2>Core Subjects</h2>
             <ul className="subjects">
               <Element
                 style={{
                   position: "relative",
-                  height: "400px",
+                  height: "200px",
                   overflow: "scroll",
-                  marginBottom: "50px",
+                  marginBottom: "60px",
+                  marginRight:"40px",
+                  borderRadius:"20px"
                 }}
               >
                 {renderSubjects()}
