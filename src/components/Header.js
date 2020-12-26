@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css"
 import logo from '../assets/Planet.png'
-import ParticlesBg  from "particles-bg";
 
 
 const Header = () => {
+  useEffect(()=>{
+    fetch('http://localhost:5001/Breadths/')
+    .then(res => res.json())
+    .then(res => console.log(res))
+  })
   return (
     <div className='header'>
-    <ParticlesBg type="cobweb" bg={true} />
       <div className='logo'>
         <img src={logo} width='400'/>
         

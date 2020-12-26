@@ -12,8 +12,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Sidebar />
-      <MainGrid />
+      <div className='row'> 
+        <div className='col-5'>
+          <Sidebar />
+        </div>
+        <div className='col-7'>
+          <MainGrid />
+        </div>
+      </div>
     </div>
   );
 }

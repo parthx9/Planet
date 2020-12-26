@@ -1,8 +1,6 @@
 import React from "react";
 import "../App.css"
-import Scroll from "react-scroll";
 
-var Element = Scroll.Element;
 
 export default function CoreSubjects({ subject }) {
   const renderSubjects = () => {
@@ -24,18 +22,7 @@ export default function CoreSubjects({ subject }) {
           <div className="core-area">
             <h2>Core Subjects</h2>
             <ul className="subjects">
-              <Element
-                style={{
-                  position: "relative",
-                  height: "200px",
-                  overflow: "scroll",
-                  marginBottom: "60px",
-                  marginRight:"40px",
-                  borderRadius:"20px"
-                }}
-              >
-                {renderSubjects()}
-              </Element>
+              {renderSubjects()}
             </ul>
           </div>
         </div>

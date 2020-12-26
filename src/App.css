@@ -1,17 +1,9 @@
 /* Custom CSS */
-.App{
-  width:100vw;
-  height: 100vh;
-  position: relative;
-}
-
 body{
   background: #EAE8FF;  /* fallback for old browsers */
    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 0;
 } 
-
-
 .header{
   width: 100%;
   background-color: #2d3142;
@@ -26,39 +18,17 @@ body{
   padding: 50px;
 }
 
-.Sidebar{
+.sidebar{
   height: 100%;
   background-color: #ADACB5;
-  width: 350px;
 }
 
-.Maingrid{
+.maingrid{
   height: 100%;
   width:800px;
   background-color: #d8d5db;
-  position: absolute;
-  top:86px;
-  right:300px;
 }
 
-Select{
-  color: #000000;
-}
-.subs-row{
-  padding: 10px 0px;
-  text-align: center;
-}
-.subs{
-  
-  text-align: center;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  margin: 10px;
-  background-color: #2d3142;
-  font-size: 25px;
-  font-family:  Helvetica;
-  color: #fff;
-}
 .form-area{
   padding: 50px;
 }
