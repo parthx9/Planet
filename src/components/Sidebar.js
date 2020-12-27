@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
+import Electives from "./Electives";
 
 
 function Sidebar({ setSubject, subject }) {
@@ -84,6 +85,7 @@ function Sidebar({ setSubject, subject }) {
             {renderCoreSubjects()}
           </ul>
         </div>
+        <Electives />
       </div>
     </div>
   );

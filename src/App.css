@@ -29,12 +29,26 @@ body{
 .majorDropdown:focus{
   outline: none;
 }
-.core-list{
+.search-elective{
+  font-size: 18px;
+  padding: 5px 10px 5px 10px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 15px;
+  border: 0px;
+  width: 100%;
+}
+.search-elective:focus{
+  outline: none;
+}
+.majorDropdown:focus{
+  outline: none;
+}
+.core-list, .elective-list{
   list-style: none;
   padding-left: 0%;
   display: inline-block;
 }
-.core-item{
+.core-item, .elective-item{
   color: #fff;
   background-color: #1f0664;
   border-radius: 10px;
