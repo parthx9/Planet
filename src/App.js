@@ -16,10 +16,10 @@ function App() {
       <Header />
         <div className=''>
           <div className='row'> 
-            <div className='col-4'>
+            <div className='col-md-4 col-12'>
               <Sidebar setSubject={setSubject} subject={subject} />
             </div>
-            <div className='col-7'>
+            <div className='col-md-7 col-12'>
               <MainGrid />
             </div>
           </div>

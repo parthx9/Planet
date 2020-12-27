@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "../App.css";
+import Breadths from "./Breadths";
+
 import Electives from "./Electives";
 
 
@@ -86,6 +87,7 @@ function Sidebar({ setSubject, subject }) {
           </ul>
         </div>
         <Electives />
+        <Breadths />
       </div>
     </div>
   );

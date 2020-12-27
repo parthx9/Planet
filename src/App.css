@@ -3,6 +3,7 @@ body{
   background: #EAE8FF;  /* fallback for old browsers */
    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 0;
+  overflow-x: hidden;
 } 
 .header{
   width: 100%;
@@ -43,12 +44,12 @@ body{
 .majorDropdown:focus{
   outline: none;
 }
-.core-list, .elective-list{
+.core-list, .elective-list, .breadth-list{
   list-style: none;
   padding-left: 0%;
   display: inline-block;
 }
-.core-item, .elective-item{
+.core-item, .elective-item, .breadth-item{
   color: #fff;
   background-color: #1f0664;
   border-radius: 10px;
