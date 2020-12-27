@@ -3,13 +3,12 @@ import "../App.css";
 
 
 function Sidebar({ setSubject, subject }) {
-
+  const [majorList, setMajorList] = useState([])
   const [cores, setCores] = useState([])
 
   const handleCore = (majorName) =>{
-    setCores([])
     majorList.map( (major)=>{
-      if (majorName===major.name){
+      if (majorName === major.name){
         setCores(major.core)
       }
       return cores
@@ -19,7 +18,7 @@ function Sidebar({ setSubject, subject }) {
   const handleOnChange = (event) =>{
     // setSubject(event.value)
     handleCore(event.value)
-    // console.log(cores)
+    console.log(cores)
   }
 
   const renderCoreSubjects = () => {
@@ -27,7 +26,7 @@ function Sidebar({ setSubject, subject }) {
       return(
         cores.map( core => {
           return(
-            <li className='core-item' key={core.name}>{core.name}</li>
+            <li className='core-item'>{core.name}</li>
           )
         })
       )
@@ -56,7 +55,6 @@ function Sidebar({ setSubject, subject }) {
     }
   }
 
-  const [majorList, setMajorList] = useState([])
   useEffect(()=>{
     fetch('http://localhost:5001/Majors/')
     .then( res => res.json() )
