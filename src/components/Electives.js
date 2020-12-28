@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Fuse from 'fuse.js';
 
 
 const Electives = () => {
@@ -6,6 +7,18 @@ const Electives = () => {
   const [selectedElective, setSelectedElective] = useState([])
   const [searchResults, setSearchResults] = useState([])
   const [searchTerm, setSearchTerm] = useState(null)
+
+  const fuse = new Fuse(selectedElective, {
+    shouldSort: true,
+    includeMatches: true,
+    minMatchCharLength:2,
+    includeScore: true,
+    // threshold: 0.5,
+    location: 50,
+    keys:[
+      'name'
+    ]
+  })
 
   const renderElectiveDepartments = () => {
     return(
@@ -19,11 +32,20 @@ const Electives = () => {
     )
   }
 
-  const renderElectives = (list) => {
+  const handleSearch = (e) => {
+    e.preventDefault()
+    const results = fuse.search(searchTerm)
+    console.log(searchTerm)
+    setSearchResults(results)
+    console.log(searchResults)
+  }
+
+  const renderElectives = () => {
+    const list = searchResults.slice(0,5)
     return(
       list.map( (item) =>{
         return(
-          <li className='elective-item' key={item._id}>{item.name}</li>
+          <li className='elective-item'>{item.item.name}</li>
         )
       })
     )
@@ -60,12 +82,12 @@ const Electives = () => {
       >
         {renderElectiveDepartments()}
       </select>
-      <form>
-        <input type='text' className='search-bar' placeholder='Search..'></input>
+      <form onSubmit={(e)=> handleSearch(e)}>
+        <input type='text' onChange={(e)=>setSearchTerm(e.target.value)} className='search-bar' placeholder='Search..'></input>
         <button className='search-btn' type='submit'><i className='fa fa-search'></i></button>
       </form>
       <ul className='elective-list'>
-        {renderElectives(selectedElective.slice(0,5))}
+        {renderElectives()}
       </ul>
     </div>
   )
