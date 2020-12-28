@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 const Electives = () => {
   const [electives, setElectives] = useState([])
   const [selectedElective, setSelectedElective] = useState([])
+  const [searchResults, setSearchResults] = useState([])
+  const [searchTerm, setSearchTerm] = useState(null)
 
   const renderElectiveDepartments = () => {
     return(
@@ -58,7 +60,10 @@ const Electives = () => {
       >
         {renderElectiveDepartments()}
       </select>
-      <input type='text' className='search-elective' placeholder='Search..'></input>
+      <form>
+        <input type='text' className='search-bar' placeholder='Search..'></input>
+        <button className='search-btn' type='submit'><i className='fa fa-search'></i></button>
+      </form>
       <ul className='elective-list'>
         {renderElectives(selectedElective.slice(0,5))}
       </ul>

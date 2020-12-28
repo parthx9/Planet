@@ -30,15 +30,29 @@ body{
 .majorDropdown:focus{
   outline: none;
 }
-.search-elective{
+.search-btn{
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 100%;
+  margin-left: 10px;
+  border: 0px;
+  padding: 5px 10px 5px 10px;
+}
+.search-btn:focus{
+  outline: none;
+  background-color: #1f0664;
+  color: #fff;
+}
+.search-bar{
   font-size: 18px;
   padding: 5px 10px 5px 10px;
   margin: 10px 0px 10px 0px;
   border-radius: 15px;
   border: 0px;
-  width: 100%;
+  width: 70%;
+  display: inline-block;
 }
-.search-elective:focus{
+.search-bar:focus{
   outline: none;
 }
 .majorDropdown:focus{
